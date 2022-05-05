@@ -23,7 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 
 # notify 'secrets.json' file path
-secret_file - os.path.join(BASE_DIR, 'secrets.json')
+
+secret_file = os.path.join(BASE_DIR, 'secrets.json')
 
 with open(secret_file) as f:
     secrets = json.loads(f.read())
@@ -37,7 +38,7 @@ def get_secret(setting, secrets=secrets):
         error_msg = "set the {} environment variable".format(setting)
         raise ImproperlyConfigured(error_msg)
 
-SECRET_KEY = get_secret("SECRET_KEY")
+SECRET_KEY = 'django-insecure-4zs5z%l!gko0p&thnc6-ps_v4@jr92f!$$&trgc&molgywm8_6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
